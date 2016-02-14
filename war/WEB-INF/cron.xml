@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+	<cron>
+		<url>/cron/cartracker2</url>
+		<description>Keeps track of total number of routes in datastore.</description>
+		<schedule>every 10 minutes</schedule>
+	</cron>
+</cronentries>

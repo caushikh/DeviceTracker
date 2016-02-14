@@ -1,0 +1,22 @@
+body,div,td,li {
+	font-family: Arial;
+	font-size: 12pt;
+}
+
+h1 {
+	font-size: 110%;
+	font-weight: bold;
+	color: #0033c0;
+}
+
+h2 {
+	font-size: 105%;
+	font-weight: bold;
+	color: #606060;
+}
+
+.error {
+	color: #ff0000;
+	font-weight: bold;
+}
+

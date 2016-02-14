@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html><head>
+<title>Log in to the Cartracker</title>
+<style>
+#newacct td {
+	padding-top: 10px;
+}
+#errmsg {
+	color: #FF0000;
+}
+</style>
+
+<link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+<script src="jquery-1.8.2.min.js"></script>
+<script src="jquery.validate.js"></script>
+<script src="jquery.mobile-1.2.0.min.js"></script>
+<script>
+$(function() {
+	$("#form").validate();
+});
+</script>
+</head><body>
+ 
+ 
+ 
+ 
+<h1>Log into the Cartracker</h1>
+<form method="post" action="login.jsp" id="form">
+<table>
+<tr><td id="errmsg" class="error" colspan="2"></td></tr>
+<tr><td>Username:</td><td><input name="username" class="required username" id="username"></td></tr>
+<tr><td>Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
+
+<tr><td></td><td><input type="submit" value="Submit"></td></tr>
+<tr><td></td><td>New User? <a href="register.jsp">Register Here</a></td></tr>
+</form>
+
+
+
+
+
+
+
+<%@ page import="javax.jdo.*" %>
+<%@ page import="com.cartracker2.*" %>
+<%@ page import="java.util.regex.*" %> 
+<%
+	PersistenceManager pm = PMF.getPMF().getPersistenceManager();
+	try {
+		session.setAttribute("user", null);
+		
+		String errorMessage = null;
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		if (username == null) username = "";
+		if (password == null) password = "";
+		
+		boolean isPost = "POST".equals(request.getMethod());
+
+		String simpleUserRegex = 
+				"^[_A-Za-z0-9-\\+]{8,}$";
+		if (isPost && username.length() > 0 && !username.matches(simpleUserRegex)) {
+			errorMessage = "Invalid username";
+		} else if (isPost && username.length() > 0 && password.length() > 0) {
+			// try to log in
+			User user = User.loadAccount(username, password, pm);
+			if (user == null) {
+				errorMessage = "Sorry, the username or password has a typo.";
+			} else {
+				session.setAttribute("user", user.getID());
+			}
+		} else {
+			// this is the first time loading
+			// nothing to do here; carry on
+		}
+		
+		out.write("<script>");
+		if (session.getAttribute("user") != null) {
+			out.write("location = 'homesplash.jsp';");
+		} else {
+			if (errorMessage != null) 
+				out.write("$('#errmsg').text('"+Util.clean(errorMessage)+"');");
+			if (username.length() > 0) 
+				out.write("$('#username').val('"+Util.clean(username)+"');");
+		}					
+		out.write("</script>");
+		
+	} finally {
+		pm.close();
+	}
+%>
+
+
+
+
+
+
+</body></html>
