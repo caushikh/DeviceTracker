@@ -1,0 +1,5 @@
+Issues
+
+- In track.html, on the tablet, the google map obscures the rest of the page.
+If scrolled down to a certain position, scrolling further only moves the 
+location of the google map. 
