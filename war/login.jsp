@@ -9,18 +9,21 @@
 	color: #FF0000;
 }
 </style>
-
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
 <script src="jquery-1.8.2.min.js"></script>
 <script src="jquery.validate.js"></script>
 <script src="jquery.mobile-1.2.0.min.js"></script>
+<!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="jquery.validate.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
 <script>
 $(function() {
 	$("#form").validate();
 });
 </script>
 </head><body>
- 
  
  
  
