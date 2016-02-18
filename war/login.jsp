@@ -8,8 +8,22 @@
 #errmsg {
 	color: #FF0000;
 }
+
+.center {
+	margin:auto;
+}
+
+.button {
+	display:block;
+	width: 29%;
+	height:100%;
+	text-overflow: clip;
+	font-size: .1em;
+}
+
+
 </style>
-<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
 <script src="jquery-1.8.2.min.js"></script>
 <script src="jquery.validate.js"></script>
@@ -25,19 +39,24 @@ $(function() {
 </script>
 </head><body>
  
- 
- 
-<h1>Log into the Cartracker</h1>
-<form method="post" action="login.jsp" id="form">
-<table>
-<tr><td id="errmsg" class="error" colspan="2"></td></tr>
-<tr><td>Username:</td><td><input name="username" class="required username" id="username"></td></tr>
-<tr><td>Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
+ <div class="center">
+ 	<a href="#" class="button" data-role="button" data-inline="true">Home</a>
+ 	<a href="#" class="button" data-role="button" data-inline="true">About</a>
+ 	<!--<a href="#" class="button" data-role="button" data-inline="true">Sign Up</a>-->
+ 	<a href="#" class="button" data-role="button" data-inline="true">Login</a>
+ </div>
+<div class="center"> 
+	<h1 style="text-align:center">Log into the Cartracker</h1>
+	<form method="post" action="login.jsp" id="form">
+	<table class="center">
+	<tr><td id="errmsg" class="error" colspan="2"></td></tr>
+	<tr><td>Username:</td><td><input name="username" class="required username" id="username"></td></tr>
+	<tr><td>Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
 
-<tr><td></td><td><input type="submit" value="Submit"></td></tr>
-<tr><td></td><td>New User? <a href="register.jsp">Register Here</a></td></tr>
-</form>
-
+	<tr><td></td><td><input type="submit" value="Submit"></td></tr>
+	<tr><td></td><td>New User? <a href="register.jsp">Register Here</a></td></tr>
+	</form>
+</div>
 
 
 
