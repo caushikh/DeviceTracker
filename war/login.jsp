@@ -1,29 +1,8 @@
 <!DOCTYPE html>
 <html><head>
 <title>Log in to the Cartracker</title>
-<style>
-#newacct td {
-	padding-top: 10px;
-}
-#errmsg {
-	color: #FF0000;
-}
-
-.center {
-	margin:auto;
-}
-
-.button {
-	display:block;
-	width: 29%;
-	height:100%;
-	text-overflow: clip;
-	font-size: .1em;
-}
-
-
-</style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="prelogin.css" />
 <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
 <script src="jquery-1.8.2.min.js"></script>
 <script src="jquery.validate.js"></script>
@@ -40,13 +19,13 @@ $(function() {
 </head><body>
  
  <div class="center">
- 	<a href="#" class="button" data-role="button" data-inline="true">Home</a>
- 	<a href="#" class="button" data-role="button" data-inline="true">About</a>
+ 	<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
+ 	<a href="about.html" class="button" data-role="button" data-inline="true">About</a>
  	<!--<a href="#" class="button" data-role="button" data-inline="true">Sign Up</a>-->
- 	<a href="#" class="button" data-role="button" data-inline="true">Login</a>
+ 	<a id="login" class="button" data-role="button" data-inline="true">Login</a>
  </div>
 <div class="center"> 
-	<h1 style="text-align:center">Log into the Cartracker</h1>
+	<h1 class="center">Log into the Cartracker</h1>
 	<form method="post" action="login.jsp" id="form">
 	<table class="center">
 	<tr><td id="errmsg" class="error" colspan="2"></td></tr>
@@ -58,7 +37,17 @@ $(function() {
 	</form>
 </div>
 
-
+<script>
+$(document).ready(function() {
+	var loginfunc = function() {
+		window.location = "login.jsp?cb=" + (new Date()).getTime();
+	}
+	var login = document.getElementById('login');
+	if (login){
+		login.addEventListener("click", loginfunc, false);
+	}
+});
+</script>
 
 
 

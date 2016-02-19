@@ -1,0 +1,15 @@
+.center {
+	margin:auto;
+	border: 1px solid black;
+}
+
+.button {
+	display:block;
+	width: 29%;
+	height:100%;
+	text-overflow: clip;
+	font-size: .1em;
+}
+h1 {
+	width: 30%;
+}

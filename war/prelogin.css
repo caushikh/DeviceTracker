@@ -1,0 +1,21 @@
+.center {
+	margin:auto;
+}
+
+.button {
+	display:block;
+	width: 29%;
+	height:100%;
+	text-overflow: clip;
+	font-size: .1em;
+}
+h1 {
+	width: 30%;
+}
+
+#newacct td {
+	padding-top: 10px;
+}
+#errmsg {
+	color: #FF0000;
+}
