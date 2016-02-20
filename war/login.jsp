@@ -7,47 +7,30 @@
 <script src="jquery-1.8.2.min.js"></script>
 <script src="jquery.validate.js"></script>
 <script src="jquery.mobile-1.2.0.min.js"></script>
-<!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"></script>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="jquery.validate.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
-<script>
-$(function() {
-	$("#form").validate();
-});
-</script>
-</head><body>
- 
- <div class="center">
- 	<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
- 	<a href="about.html" class="button" data-role="button" data-inline="true">About</a>
- 	<!--<a href="#" class="button" data-role="button" data-inline="true">Sign Up</a>-->
- 	<a id="login" class="button" data-role="button" data-inline="true">Login</a>
- </div>
-<div class="center"> 
-	<h1 class="center">Log into the Cartracker</h1>
-	<form method="post" action="login.jsp" id="form">
-	<table class="center">
-	<tr><td id="errmsg" class="error" colspan="2"></td></tr>
-	<tr><td>Username:</td><td><input name="username" class="required username" id="username"></td></tr>
-	<tr><td>Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
+<script src="prelogin.js"></script>
+</head>
+<body>
+<div data-role="page" id="login"> 
+ 	<div class="center">
+ 		<div data-role="content">
+ 			<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
+ 			<a href="about.html" class="button" data-role="button" data-inline="true">About</a>
+ 			<!--<a href="#" class="button" data-role="button" data-inline="true">Sign Up</a>-->
+ 			<a id="login" class="button" data-role="button" data-inline="true">Login</a>
+ 		 
+			<h1 class="center">Log into the Cartracker</h1>
+			<form method="post" action="login.jsp" id="form">
+			<table class="center">
+			<tr><td id="errmsg" class="error" colspan="2"></td></tr>
+			<tr><td>Username:</td><td><input name="username" class="required username" id="username"></td></tr>
+			<tr><td>Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
 
-	<tr><td></td><td><input type="submit" value="Submit"></td></tr>
-	<tr><td></td><td>New User? <a href="register.jsp">Register Here</a></td></tr>
-	</form>
+			<tr><td></td><td><input type="submit" value="Submit"></td></tr>
+			<tr><td></td><td>New User? <a href="register.jsp">Register Here</a></td></tr>
+			</form>
+		</div>
+	</div>
 </div>
-
-<script>
-$(document).ready(function() {
-	var loginfunc = function() {
-		window.location = "login.jsp?cb=" + (new Date()).getTime();
-	}
-	var login = document.getElementById('login');
-	if (login){
-		login.addEventListener("click", loginfunc, false);
-	}
-});
-</script>
 
 
 

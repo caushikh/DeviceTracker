@@ -8,26 +8,20 @@
 <script src="jquery-1.8.2.min.js"></script>
 <script src="jquery.validate.js"></script>
 <script src="jquery.mobile-1.2.0.min.js"></script>
+<script src="prelogin.js"></script>
 </head>
 <body>
- <div class="center">
- 	<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
- 	<a href="#" class="button" data-role="button" data-inline="true">About</a>
- 	<a id="login" class="button" data-role="button" data-inline="true">Login</a>
- 	<!-- <a href="login.jsp" class="button" data-role="button" data-inline="true">Login</a>-->
-	<h1 class="center">About Cartracker</h1>
+<div data-role="page" id="about">
+ 	<div class="center">
+ 		<div data-role="content">
+ 			<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
+ 			<a href="#" class="button" data-role="button" data-inline="true">About</a>
+ 			<a id="login" href="login.html" class="button" data-role="button" data-inline="true">Login</a>
+ 			<!-- <a href="login.jsp" class="button" data-role="button" data-inline="true">Login</a>-->
+			<h1 class="center">About Cartracker</h1>
+		</div>
+ 	</div>
  </div>
- 
- <script>
- $(document).ready(function() {
-	var loginfunc = function() {
-		window.location = "login.jsp?cb=" + (new Date()).getTime();
-	}
-	var login = document.getElementById('login');
-	if (login){
-		login.addEventListener("click", loginfunc, false);
-	}
-});
-</script>
+
 </body>
 </html>
