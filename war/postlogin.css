@@ -1,0 +1,12 @@
+html, body, #track{
+	height: 100%;
+	padding: 0px;
+}
+#mapcanvas {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+#title, #update {
+	text-align: center;
+}

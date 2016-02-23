@@ -3,23 +3,15 @@
 	<title>Home Splash</title>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<meta charset="utf-8">
-	<style>
-		html, body, #home{
-			height: 100%;
-			padding: 0px;
-		}
-		#mapcanvas {
-			height: 100%;
-			width: 100%;
-			margin: 0 auto;
-		}
-		#title, #update {
-			text-align: center;
-		}
-	</style>
+	<!--<link rel="stylesheet" href="postlogin.css"/>-->
+	<!--<link rel="stylesheet" href="prelogin.css"/>-->
+	<link rel="stylesheet" href="styles.css"/>
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFSBkXjV3dteXXbZKZbhVzshHNd54ISUY&sensor=true"></script>
 	<script src="jquery-1.8.2.min.js"></script>
+	<script src="jquery.validate.js"></script>
 	<script src="jquery.mobile-1.2.0.min.js"></script>
+	<script src="prelogin.js"></script>
 </head>
 <body>
 <%@ page import="java.util.*" %>
@@ -40,7 +32,8 @@
 		pm.close();
 	}
 %>
-	<div data-role="page">
+	<div id="body">
+	<div data-role="page" id="homesplash">
 		<div data-role="header">
 			<div><h2>Welcome User!</h2></div>
 		</div>
@@ -53,6 +46,7 @@
 		<div data-role="footer">
 			<a href="login.jsp">Logout</a>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
