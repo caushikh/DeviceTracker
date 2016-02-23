@@ -32,7 +32,7 @@
 		pm.close();
 	}
 %>
-	<div id="body">
+	<div>
 	<div data-role="page" id="homesplash">
 		<div data-role="header">
 			<div><h2>Welcome User!</h2></div>

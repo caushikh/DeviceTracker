@@ -13,7 +13,7 @@
 <script src="prelogin.js"></script>
 </head>
 <body>
-<div data-role="page" id="login"> 
+<div data-role="page" id="login2"> 
  	<div class="center">
  		<div data-role="content">
  			<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
