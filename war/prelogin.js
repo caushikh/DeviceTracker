@@ -133,3 +133,42 @@ function upload() {
 		return stopsjson;
 	}
 });
+
+$(document).on("pageinit", "#view", function() {
+	$.ajax({
+		method: "GET",
+		contentType: "application/json",
+		url: "getroutes.jsp",
+		data: {
+			"datatoget": "names"
+		},
+		dataType: "json",
+		success: function(routes) {
+			var i;
+			for (i = 0; i < routes.length; i++) {
+				$("#myroutes").append("<li><a href=\"showmap.html?datatoget="+routes[i]+"\"data-ajax=\"false\">"+routes[i]+"</a></li>").listview('refresh');
+			}
+		},
+		error: function(a,b,c) {
+				$("#myroutes").append("You have no saved routes.");
+		}
+	});
+
+	function showmap(route) {
+		$.ajax({
+			method: "GET",
+			contentType: "application/json",
+			data: {
+				"datatoget": route
+			},
+			url: "getroutes.jsp",
+			dataType: "json",
+			success: function(routes) {
+
+			},
+			error: function(a,b,c) {
+				$("#myroutes").append("For some reason, this route could not be viewed.");
+			}
+		});
+	}
+});	
