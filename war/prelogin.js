@@ -172,3 +172,7 @@ $(document).on("pageinit", "#view", function() {
 		});
 	}
 });	
+
+$(document).on("pageinit", "#register", function() {
+	$("#form").validate();
+});

@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html><head>
 <title>Register to Use Cartracker</title>
-<style>
-#newacct td {
-	padding-top: 10px;
-}
-#errmsg {
-	color: #FF0000;
-}
-</style>
-
-
+<link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFSBkXjV3dteXXbZKZbhVzshHNd54ISUY&sensor=true"></script>
 <script src="jquery-1.8.2.min.js"></script>
 <script src="jquery.validate.js"></script>
 <script src="jquery.mobile-1.2.0.min.js"></script>
-<script>
-$(function() {
-	$("#form").validate();
-});
-</script>
+<script src="prelogin.js"></script>
 </head><body>
  
  
  
- 
-<h1>Register to Use Cartracker</h1>
-<form method="post" action="register.jsp" id="form">
-<table>
-<tr><td id="errmsg" class="error" colspan="2"></td></tr>
-<tr><td><b>Note: Username must be an 8-digit alphanumeric string.</b></td></tr>
-<tr><td>Username:</td><td><input name="username" class="required username" id="username"></td></tr>
-<tr><td>Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
-<tr><td>Confirm password:</td><td><input name="confirmpassword" type="password"></td></tr>
-<tr><td></td><td><input type="submit" value="Submit"></td></tr>
-</form>
+<div data-role="page" id="register">
+	<div class="center">
+ 		<div data-role="content">
+ 			<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
+ 			<a href="about.html" class="button" data-role="button" data-inline="true">About</a>
+ 			<a id="login" href="login.html" class="button" data-role="button" data-inline="true">Login</a>
+			<h1 class="center">Register to Use Cartracker</h1>
+			<form method="post" action="register.jsp" id="form">
+			<table class="center">
+			<tr><td id="errmsg" class="error" colspan="2"></td></tr>
+			<tr><td><b>Note: Username must be an 8-digit alphanumeric string.</b></td></tr>
+			<tr><td>Username:</td><td><input name="username" class="required username" id="username"></td></tr>
+			<tr><td>Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
+			<tr><td>Confirm password:</td><td><input name="confirmpassword" type="password"></td></tr>
+			<tr><td></td><td><input type="submit" value="Submit"></td></tr>
+			</form>
+		</div>
+	</div>
+</div>
 
 
 
@@ -100,8 +96,6 @@ $(function() {
 		pm.close();
 	}
 %>
-
-
 
 
 
