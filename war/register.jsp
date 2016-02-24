@@ -14,6 +14,9 @@
  
 <div data-role="page" id="register">
 	<div class="center">
+		<div data-role="header">
+			<h1>Cartracker</h1>
+		</div>
  		<div data-role="content">
  			<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
  			<a href="about.html" class="button" data-role="button" data-inline="true">About</a>
@@ -28,9 +31,8 @@
 			<tr><td>Confirm password:</td><td><input name="confirmpassword" type="password"></td></tr>
 			<tr><td></td><td><input type="submit" value="Submit"></td></tr>
 			</form>
-		</div>
-	</div>
-</div>
+		</div>		
+
 
 
 
@@ -97,7 +99,9 @@
 	}
 %>
 
-
-
-
+		<div data-role="footer" data-position="fixed">
+			<small>&copy;2016 Cartracker</small>
+		</div>
+	</div>
+</div>
 </body></html>
