@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 <title>Log in to the Cartracker</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--<link rel="stylesheet" href="prelogin.css" />
-<link rel="stylesheet" href="postlogin.css"/>-->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFSBkXjV3dteXXbZKZbhVzshHNd54ISUY&sensor=true"></script>
