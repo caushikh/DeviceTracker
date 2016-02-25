@@ -14,8 +14,8 @@ $(document).on("pageinit", "#login1", function() {
 	//$("#login").href = "login.jsp?cb=" + (new Date()).getTime();
 });
 
+var stops = [];
 $(document).on("pageinit", "#track", function() {
-	var stops = [];
 	var map;
 	var poly;
 	var loctimer;
@@ -76,7 +76,7 @@ $(document).on("pageinit", "#track", function() {
 	
 	getLocation(success,error);
 	loctimer = setInterval(function() { getLocation(updatePosition,error) }, 60000);
-
+});
 function save() {
 		if ($("#save").val() == "") {
 			$("#save").append("Please enter the name of this route:<br><input type=\"text\" id=\"name\">");
@@ -132,7 +132,6 @@ function upload() {
 		}
 		return stopsjson;
 	}
-});
 
 $(document).on("pageinit", "#view", function() {
 	$.ajax({
@@ -177,8 +176,7 @@ $(document).on("pageinit", "#register", function() {
 	$("#form").validate();
 });
 
-$(document).on("paginit","#showmap", function() {
-	var stops = [];
+	var showstops = [];
 	$.ajax({
 		method: "GET",
 		url: "show.jsp",
@@ -196,7 +194,7 @@ $(document).on("paginit","#showmap", function() {
 				lat = locations[i].lat;
 				lng = locations[i].lng;
 				temp = new google.maps.LatLng(lat,lng);
-				stops.push(temp);
+				showstops.push(temp);
 			}
 			createmap();
 		},
@@ -210,7 +208,7 @@ $(document).on("paginit","#showmap", function() {
 		var poly;
 		var i;
 		var marker;
-		pos = stops[0];
+		var pos = showstops[0];
 		var mapOptions = {
 			zoom: 15,
 			center: pos
@@ -218,10 +216,10 @@ $(document).on("paginit","#showmap", function() {
 		
 		map = new google.maps.Map(document.getElementById('mapcanvas'), mapOptions);
 		
-		for (i = 0; i < stops.length; i++)
+		for (i = 0; i < showstops.length; i++)
 		{
 			var marker = new google.maps.Marker({
-				position: stops[i],
+				position: showstops[i],
 				map: map
 			});
 		}
@@ -236,4 +234,3 @@ $(document).on("paginit","#showmap", function() {
 	function createmap() {
 		google.maps.event.addDomListener(window,'load',initialize());
 	}
-});
