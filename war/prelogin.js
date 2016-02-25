@@ -176,3 +176,64 @@ $(document).on("pageinit", "#view", function() {
 $(document).on("pageinit", "#register", function() {
 	$("#form").validate();
 });
+
+$(document).on("paginit","#showmap", function() {
+	var stops = [];
+	$.ajax({
+		method: "GET",
+		url: "show.jsp",
+		contentType: "application/json",
+		dataType: "json",
+		data: {
+			"datatoget": (location.search).substr(11)
+		},
+		success: function(locations) {
+			var i;
+			var lat;
+			var lng;
+			var temp;
+			for (i = 0; i < locations.length; i++) {
+				lat = locations[i].lat;
+				lng = locations[i].lng;
+				temp = new google.maps.LatLng(lat,lng);
+				stops.push(temp);
+			}
+			createmap();
+		},
+		error: function(error) {
+			$("#mapcanvas").append("error code: "+error.code+"<br>error message: "+error.message);
+		}	
+	});
+	function initialize() {
+		// create map with following map parameters
+		var map;
+		var poly;
+		var i;
+		var marker;
+		pos = stops[0];
+		var mapOptions = {
+			zoom: 15,
+			center: pos
+		};
+		
+		map = new google.maps.Map(document.getElementById('mapcanvas'), mapOptions);
+		
+		for (i = 0; i < stops.length; i++)
+		{
+			var marker = new google.maps.Marker({
+				position: stops[i],
+				map: map
+			});
+		}
+		poly = new google.maps.Polyline({
+			path: stops,
+			strokeColor: '#FF0000',
+			strokeWeight: 1,
+			map: map
+		});
+		
+	}
+	function createmap() {
+		google.maps.event.addDomListener(window,'load',initialize());
+	}
+});

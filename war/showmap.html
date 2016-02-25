@@ -13,7 +13,7 @@
 	<script src="prelogin.js"></script>
 </head>
 <body>
-	<div data-role="page" id="home">
+	<div data-role="page" id="showmap">
 		<div data-role="header">
 			<div id="title"><h2>Route</h2></div>
 		</div>
@@ -25,66 +25,6 @@
 			<a href="login.jsp" data-ajax="false">Logout</a>
 		</div>
 	</div>
-	<script>
-			var stops = [];
-			$.ajax({
-				method: "GET",
-				url: "show.jsp",
-				contentType: "application/json",
-				dataType: "json",
-				data: {
-					"datatoget": (location.search).substr(11)
-				},
-				success: function(locations) {
-					var i;
-					var lat;
-					var lng;
-					var temp;
-					for (i = 0; i < locations.length; i++) {
-						lat = locations[i].lat;
-						lng = locations[i].lng;
-						temp = new google.maps.LatLng(lat,lng);
-						stops.push(temp);
-					}
-					createmap();
-				},
-				error: function(error) {
-					$("#mapcanvas").append("error code: "+error.code+"<br>error message: "+error.message);
-				}	
-			});
-			function initialize() {
-				// create map with following map parameters
-				var map;
-				var poly;
-				var i;
-				var marker;
-				pos = stops[0];
-				var mapOptions = {
-					zoom: 15,
-					center: pos
-				};
-				
-				map = new google.maps.Map(document.getElementById('mapcanvas'), mapOptions);
-				
-				for (i = 0; i < stops.length; i++)
-				{
-					var marker = new google.maps.Marker({
-						position: stops[i],
-						map: map
-					});
-				}
-				poly = new google.maps.Polyline({
-					path: stops,
-					strokeColor: '#FF0000',
-					strokeWeight: 1,
-					map: map
-				});
-				
-			}
-			function createmap() {
-				google.maps.event.addDomListener(window,'load',initialize());
-			}
-	</script>
 </body>
 </html>
 
