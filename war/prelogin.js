@@ -176,6 +176,8 @@ $(document).on("pageinit", "#register", function() {
 	$("#form").validate();
 });
 
+// showmap.html
+$(document).on("pageinit", "#showmap", function() {
 	var showstops = [];
 	$.ajax({
 		method: "GET",
@@ -234,3 +236,4 @@ $(document).on("pageinit", "#register", function() {
 	function createmap() {
 		google.maps.event.addDomListener(window,'load',initialize());
 	}
+});
