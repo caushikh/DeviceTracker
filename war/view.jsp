@@ -21,6 +21,7 @@
 			</ul>
 		</div>
 		<div data-role="footer">
+			<a href="homesplash.jsp">Back</a>
 			<a href="login.jsp">Logout</a>
 		</div>
 	</div>
