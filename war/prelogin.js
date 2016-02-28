@@ -121,7 +121,7 @@ function upload() {
 					//$("#msg").empty();
 					//$("#msg").append("Map could not be saved. Try again or <a href=\"homesplash.jsp\">click Here </a>to go back.");
 					$("#msg").show();
-					$("#savemsg").innerHTML = "Map could not be saved. Try again or <a href=\"homesplash.jsp\">click here </a>to go back."
+					$("#savemsg").innerHTML = "Route could not be saved. Try again or <a href=\"homesplash.jsp\">click here </a>to go back."
 				}
 			});
 		}
