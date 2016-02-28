@@ -15,10 +15,10 @@ $(document).on("pageinit", "#login1", function() {
 });
 
 var stops = [];
+var loctimer;
 $(document).on("pageinit", "#track", function() {
 	var map;
 	var poly;
-	var loctimer;
 	function initialize(lat,lng) {
 		// create map with following map parameters
 		var pos = new google.maps.LatLng(lat,lng);
@@ -82,6 +82,9 @@ function save() {
 			$("#save").append("Please enter the name of this route:<br><input type=\"text\" id=\"name\">");
 			$("#save").append("<button onclick=\"upload()\">Submit</button>");
 		}
+}
+function stopTracking() {
+	clearInterval(loctimer);
 }
 function upload() {
 		if ($("#name").val() == "") {
