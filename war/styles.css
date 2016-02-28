@@ -10,7 +10,10 @@ html, body, #track, #showmap{
 #title, #update {
 	text-align: center;
 }
-
+#background {
+	background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+		url("../windshield_back.jpg");
+}
 .center {
 	margin:auto;
 }
@@ -23,8 +26,19 @@ html, body, #track, #showmap{
 }
 h1 {
 	width: 30%;
+	margin: 30px;
 }
-
+#welcome {
+	color: white;
+}
+p {
+	color: white;
+	font-weight: 600;
+	width: 50%;
+	margin: auto;
+	padding-top: 60px;
+	opacity: .75;
+}
 #newacct td {
 	padding-top: 10px;
 }
