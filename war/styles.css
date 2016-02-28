@@ -35,3 +35,13 @@ h1 {
 .navigation {
 	text-align: center;
 }
+
+#save {
+	margin: 20px;
+	display: none;
+}
+
+#msg {
+	display: none;
+	margin: 20px;
+}

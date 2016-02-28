@@ -25,8 +25,14 @@
 			<div id="date"></div><br>
 			<button class="ui-btn" style="color:#FFFFFF; background:#FF0000" onclick="stopTracking()">Stop Tracking</button>
 			<button class="ui-btn" style="color:#FFFFFF; background:#FF0000" onclick="save()">Save Route</button>
-			<div id="save"></div>
-			<div id="msg"></div>
+			<div id="save">
+				<p id="getname">Please enter the name of this route:</p>
+				<input type="text" id="name">
+				<button onclick="upload()">Submit</button>
+			</div>
+			<div id="msg">
+				<p id="savemsg">Map saved successfully. <a href="homesplash.jsp">Click here</a> to go back.</p>
+			</div>
 			<div data-role="footer">
 				<a href="homesplash.jsp">Back</a>
 				<a href="login.jsp">Logout</a>

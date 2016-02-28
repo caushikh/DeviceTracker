@@ -79,8 +79,10 @@ $(document).on("pageinit", "#track", function() {
 });
 function save() {
 		if ($("#save").val() == "") {
-			$("#save").append("Please enter the name of this route:<br><input type=\"text\" id=\"name\">");
-			$("#save").append("<button onclick=\"upload()\">Submit</button>");
+//			$("#save").append("Please enter the name of this route:<br><input type=\"text\" id=\"name\">");
+//			$("#save").append("<button onclick=\"upload()\">Submit</button>");
+			//document.getElementById("save").style.display = "block";
+			$("#save").show();
 		}
 }
 function stopTracking() {
@@ -88,9 +90,12 @@ function stopTracking() {
 }
 function upload() {
 		if ($("#name").val() == "") {
-			$("#save").empty();
-			$("#save").append("Route name not entered. Please enter the name of this route:<br><input type=\"text\" id=\"name\">");
-			$("#save").append("<button onclick=\"upload()\">Submit</button>");
+			//$("#save").empty();
+			//document.getElementById("save").style.display = "none";
+			//$("#save").hide();
+			//$("#save").append("Route name not entered. Please enter the name of this route:<br><input type=\"text\" id=\"name\">");
+			//$("#save").append("<button onclick=\"upload()\">Submit</button>");
+			document.getElementById("getname").innerHTML = "Route name not entered. Please enter name of this route:";
 		}
 		else {
 			var stopsjson = [];
@@ -108,12 +113,15 @@ function upload() {
 				},
 				success: function(data) {
 					console.log(data)
-					$("#msg").empty();
-					$("#msg").append("Map saved successfully. <a href=\"homesplash.jsp\">Click Here </a>to go back.");
+					$("#msg").show();
+					//$("#msg").empty();
+					//$("#msg").append("Map saved successfully. <a href=\"homesplash.jsp\">Click Here </a>to go back.");
 				},
 				error: function(a,b,c) {
-					$("#msg").empty();
-					$("#msg").append("Map could not be saved. Try again or <a href=\"homesplash.jsp\">click Here </a>to go back.");
+					//$("#msg").empty();
+					//$("#msg").append("Map could not be saved. Try again or <a href=\"homesplash.jsp\">click Here </a>to go back.");
+					$("#msg").show();
+					$("#savemsg").innerHTML = "Map could not be saved. Try again or <a href=\"homesplash.jsp\">click here </a>to go back."
 				}
 			});
 		}
