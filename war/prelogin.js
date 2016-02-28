@@ -95,7 +95,7 @@ function upload() {
 			//$("#save").hide();
 			//$("#save").append("Route name not entered. Please enter the name of this route:<br><input type=\"text\" id=\"name\">");
 			//$("#save").append("<button onclick=\"upload()\">Submit</button>");
-			document.getElementById("getname").innerHTML = "Route name not entered. Please enter name of this route:";
+			$("#getname").text("Route name not entered. Please enter name of this route:");
 		}
 		else {
 			var stopsjson = [];
@@ -121,7 +121,7 @@ function upload() {
 					//$("#msg").empty();
 					//$("#msg").append("Map could not be saved. Try again or <a href=\"homesplash.jsp\">click Here </a>to go back.");
 					$("#msg").show();
-					$("#savemsg").innerHTML = "Route could not be saved. Try again or <a href=\"homesplash.jsp\">click here </a>to go back."
+					$("#savemsg").text("Route could not be saved. Try again or <a href=\"homesplash.jsp\">click here </a>to go back.");
 				}
 			});
 		}
