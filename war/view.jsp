@@ -14,13 +14,13 @@
 <body>
 	<div data-role="page" id="view">
 		<div data-role="header">
-			<div><h2>Your Routes</h2></div>
+			<div id="title"><h2>Your Routes</h2></div>
 		</div>
 		<div data-role="content">
 			<ul data-role="listview" id="myroutes">
 			</ul>
 		</div>
-		<div data-role="footer">
+		<div data-role="footer" class="navigation">
 			<a href="homesplash.jsp">Back</a>
 			<a href="login.jsp">Logout</a>
 		</div>

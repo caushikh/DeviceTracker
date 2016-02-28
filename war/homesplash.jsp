@@ -33,7 +33,7 @@
 %>
 	<div data-role="page" id="homesplash">
 		<div data-role="header">
-			<div><h2>Welcome User!</h2></div>
+			<div id="title"><h2>Welcome User!</h2></div>
 		</div>
 		<div data-role="content">
 			<ul data-role="listview">
@@ -41,7 +41,7 @@
 				<li><a href="view.jsp" data-ajax="false">View My Routes</a></li>
 			</ul>
 		</div>
-		<div data-role="footer">
+		<div data-role="footer" class="navigation">
 			<a href="login.jsp">Logout</a>
 		</div>
 	</div>
