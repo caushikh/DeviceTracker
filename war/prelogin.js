@@ -248,3 +248,28 @@ $(document).on("pageinit", "#showmap", function() {
 		google.maps.event.addDomListener(window,'load',initialize());
 	}
 });
+
+$(document).on("pageinit", "#delete", function() {
+	$.ajax({
+		method: "GET",
+		contentType: "application/json",
+		url: "getroutes.jsp",
+		data: {
+			"datatoget": "names"
+		},
+		dataType: "json",
+		success: function(routes) {
+			var i;
+			for (i = 0; i < routes.length; i++) {
+				$("#deleteroutes").append("<li><a href='javascript:showPopup()'>"+routes[i]+"</a></li>").listview('refresh');
+			}
+		},
+		error: function(a,b,c) {
+				$("#deleteroutes").append("You have no saved routes.");
+		}
+	});
+});
+
+function showPopup() {
+	var answer = confirm("Are you sure you want to delete the route?");
+}

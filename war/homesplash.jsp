@@ -39,6 +39,7 @@
 			<ul data-role="listview">
 				<li><a href="track.html" data-ajax="false">Track New Route</a></li>
 				<li><a href="view.jsp" data-ajax="false">View My Routes</a></li>
+				<li><a href="delete.jsp" data-ajax="false">Delete Routes</a></li>
 			</ul>
 		</div>
 		<div data-role="footer" class="navigation">
