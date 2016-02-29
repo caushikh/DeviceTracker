@@ -26,10 +26,8 @@
 				
 				<div data-role="content">
 					Are you sure you want to delete this route?<br>
-					<a href="#" data-rel="back">Yes</a>
-					<a href="#" data-rel="back">No</a>
-				</div>
-				<div data-role="footer">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">No</a>
 				</div>
 			</div>
 		</div>
