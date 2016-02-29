@@ -19,6 +19,19 @@
 		<div data-role="content">
 			<ul data-role="listview" id="deleteroutes">
 			</ul>
+			<div data-role="popup" id="deletepopup">
+				<div data-role="header">
+					<h1>Delete Route</h1>
+				</div>
+				
+				<div data-role="content">
+					Are you sure you want to delete this route?<br>
+					<a href="#" data-rel="back">Yes</a>
+					<a href="#" data-rel="back">No</a>
+				</div>
+				<div data-role="footer">
+				</div>
+			</div>
 		</div>
 		<div data-role="footer" class="navigation">
 			<a href="homesplash.jsp">Back</a>

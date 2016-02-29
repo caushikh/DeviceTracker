@@ -61,3 +61,6 @@ p {
 	display: none;
 	margin: 20px;
 }
+#dialog {
+	display: none;
+}

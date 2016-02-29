@@ -261,7 +261,7 @@ $(document).on("pageinit", "#delete", function() {
 		success: function(routes) {
 			var i;
 			for (i = 0; i < routes.length; i++) {
-				$("#deleteroutes").append("<li><a href='javascript:showPopup()'>"+routes[i]+"</a></li>").listview('refresh');
+				$("#deleteroutes").append("<li><a href='#deletepopup' data-rel='popup'>"+routes[i]+"</a></li>").listview('refresh');
 			}
 		},
 		error: function(a,b,c) {
@@ -271,5 +271,6 @@ $(document).on("pageinit", "#delete", function() {
 });
 
 function showPopup() {
-	var answer = confirm("Are you sure you want to delete the route?");
+	$("#dialog").dialog();
+	$("#dialog").show();
 }
