@@ -26,7 +26,7 @@
 				
 				<div data-role="content">
 					Are you sure you want to delete this route?<br>
-					<a onclick="deleteRoute()" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
+					<a onclick="deleteRoute()" id="deletelink" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
 					<a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">No</a>
 				</div>
 			</div>
@@ -56,6 +56,7 @@
 		query = pm.newQuery(Locations.class, "owner == :oo && routename == :rr");
 		locations = (List<Locations>) query.execute(userid, routename);
 		if (locations.size() > 0) {
+			System.out.println("there is a location to delete");
 			Locations routeloc = locations.get(0);
 			pm.deletePersistent(routeloc);
 		}

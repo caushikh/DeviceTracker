@@ -265,6 +265,9 @@ $(document).on("pageinit", "#delete", function() {
 				$("#deleteroutes").append("<li><a href='#deletepopup' data-rel='popup' id=\"route"+i+"\">"+routes[i]+"</a></li>").listview('refresh');
 				$("#route"+j).click(function() {
 					deleteName = routes[j];
+					//deleteRoute(deleteName);
+				});
+				$("#deletelink").click(function() {
 					deleteRoute(deleteName);
 				});
 			};
