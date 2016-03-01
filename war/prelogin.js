@@ -284,7 +284,7 @@ function deleteRoute(name) {
 		contentType: "application/json",
 		url: "delete.jsp",
 		data: {
-			"name": routename
+			"name": name
 		},
 		success: function(data) {
 			

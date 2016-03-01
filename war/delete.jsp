@@ -44,5 +44,23 @@
 <%@ page import="com.cartracker2.*" %>
 <%@ page import="org.json.simple.*" %>
 <%
-	
+	PersistenceManager pm = PMF.getPMF().getPersistenceManager();
+	try {
+		Long userid;
+		String routename;
+		List<Locations> locations;
+		Query query;
+		
+		userid = (Long) session.getAttribute("user");
+		routename = request.getParameter("name");
+		query = pm.newQuery(Locations.class, "owner == :oo && routename == :rr");
+		locations = (List<Locations>) query.execute(userid, routename);
+		if (locations.size() > 0) {
+			Locations routeloc = locations.get(0);
+			pm.deletePersistent(routeloc);
+		}
+	}
+	finally {
+		pm.close();
+	}
 %>
