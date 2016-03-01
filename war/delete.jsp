@@ -26,7 +26,7 @@
 				
 				<div data-role="content">
 					Are you sure you want to delete this route?<br>
-					<a onclick="deleteRoute()" id="deletelink" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
+					<a onclick="deleteRoute()" data-rel="back" id="deletelink" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
 					<a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">No</a>
 				</div>
 			</div>

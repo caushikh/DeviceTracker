@@ -250,34 +250,42 @@ $(document).on("pageinit", "#showmap", function() {
 });
 
 $(document).on("pageinit", "#delete", function() {
-	$.ajax({
-		method: "GET",
-		contentType: "application/json",
-		url: "getroutes.jsp",
-		data: {
-			"datatoget": "names"
-		},
-		dataType: "json",
-		success: function(routes) {
-			var addDeleteNames = function(i) {
-				var j = i;
-				var deleteName = "";
-				$("#deleteroutes").append("<li><a href='#deletepopup' data-rel='popup' id=\"route"+i+"\">"+routes[i]+"</a></li>").listview('refresh');
-				$("#route"+j).click(function() {
-					deleteName = routes[j];
-					//deleteRoute(deleteName);
-				});
-				$("#deletelink").click(function() {
-					deleteRoute(deleteName);
-				});
-			};
-			for (var i = 0; i < routes.length; i++) {
-				addDeleteNames(i);
-			}
-		},
-		error: function(a,b,c) {
+	var deleteName = "";
+	var getRoutes = function() {
+		$.ajax({
+			method: "GET",
+			contentType: "application/json",
+			url: "getroutes.jsp",
+			data: {
+				"datatoget": "names"
+			},	
+			dataType: "json",
+			success: function(routes) {
+				var listRoutes = function() {
+					for (var i = 0; i < routes.length; i++) {
+						addDeleteNames(i);
+					}
+				};
+				var addDeleteNames = function(i) {
+					var j = i;
+					$("#deleteroutes").append("<li><a href='#deletepopup' data-rel='popup' id=\"route"+i+"\">"+routes[i]+"</a></li>").listview('refresh');
+					$("#route"+j).click(function() {
+						deleteName = routes[j];
+						//deleteRoute(deleteName);
+					});	
+				};
+				listRoutes();
+			},
+			error: function(a,b,c) {
 				$("#deleteroutes").append("You have no saved routes.");
-		}
+			}
+		});
+	};
+	getRoutes();
+	$("#deletelink").click(function() {
+		deleteRoute(deleteName);
+		$("#deleteroutes").empty();
+		setTimeout(getRoutes, 1000);
 	});
 });
 
