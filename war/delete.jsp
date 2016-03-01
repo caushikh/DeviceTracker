@@ -26,8 +26,8 @@
 				
 				<div data-role="content">
 					Are you sure you want to delete this route?<br>
-					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
-					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">No</a>
+					<a onclick="deleteRoute()" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
+					<a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">No</a>
 				</div>
 			</div>
 		</div>
@@ -38,3 +38,11 @@
 	</div>
 </body>
 </html>
+
+<%@ page import="java.util.*" %>
+<%@ page import="javax.jdo.*" %>
+<%@ page import="com.cartracker2.*" %>
+<%@ page import="org.json.simple.*" %>
+<%
+	
+%>

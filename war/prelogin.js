@@ -259,9 +259,17 @@ $(document).on("pageinit", "#delete", function() {
 		},
 		dataType: "json",
 		success: function(routes) {
-			var i;
-			for (i = 0; i < routes.length; i++) {
-				$("#deleteroutes").append("<li><a href='#deletepopup' data-rel='popup'>"+routes[i]+"</a></li>").listview('refresh');
+			var addDeleteNames = function(i) {
+				var j = i;
+				var deleteName = "";
+				$("#deleteroutes").append("<li><a href='#deletepopup' data-rel='popup' id=\"route"+i+"\">"+routes[i]+"</a></li>").listview('refresh');
+				$("#route"+j).click(function() {
+					deleteName = routes[j];
+					deleteRoute(deleteName);
+				});
+			};
+			for (var i = 0; i < routes.length; i++) {
+				addDeleteNames(i);
 			}
 		},
 		error: function(a,b,c) {
@@ -270,7 +278,19 @@ $(document).on("pageinit", "#delete", function() {
 	});
 });
 
-function showPopup() {
-	$("#dialog").dialog();
-	$("#dialog").show();
+function deleteRoute(name) {
+	$.ajax({
+		method: "POST",
+		contentType: "application/json",
+		url: "delete.jsp",
+		data: {
+			"name": routename
+		},
+		success: function(data) {
+			
+		},
+		error: function(a,b,c) {
+			
+		}
+	});
 }
