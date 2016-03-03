@@ -15,7 +15,11 @@ html, body, #track, #showmap{
 		url("../windshield_back.jpg");
 	background-size: cover;
 }
-
+#register {
+	color: #99ffff;
+	opacity: .75;
+	font-weight: normal;
+}
 .center {
 	margin:auto;
 }
@@ -46,6 +50,7 @@ h1 {
 .logintext {
 	color:white;
 	opacity: .75;
+	font-size: 18pt;
 }
 #newacct td {
 	padding-top: 10px;
