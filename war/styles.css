@@ -10,7 +10,7 @@ html, body, #track, #showmap{
 #title, #update {
 	text-align: center;
 }
-#background {
+.background {
 	background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
 		url("../windshield_back.jpg");
 }
@@ -28,7 +28,7 @@ h1 {
 	width: 30%;
 	margin: 30px;
 }
-#welcome {
+.homeheader {
 	color: white;
 	padding-top: 20px;
 }
