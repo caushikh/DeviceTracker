@@ -16,21 +16,21 @@
  		<div data-role="header">
  			<h1>Cartracker</h1>
  		</div>
- 		<div data-role="content">
+ 		<div data-role="content" class="background">
  			<a href="home.html" class="button" data-role="button" data-inline="true">Home</a>
  			<a href="about.html" class="button" data-role="button" data-inline="true">About</a>
  			<!--<a href="#" class="button" data-role="button" data-inline="true">Sign Up</a>-->
  			<a id="login" class="button" data-role="button" data-inline="true">Login</a>
  		 
-			<h1 class="center">Log into the Cartracker</h1>
+			<h1 class="center homeheader">Log into the Cartracker</h1>
 			<form method="post" action="login.jsp" id="form">
 			<table class="center">
 			<tr><td id="errmsg" class="error" colspan="2"></td></tr>
-			<tr><td>Username:</td><td><input name="username" class="required username" id="username"></td></tr>
-			<tr><td>Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
+			<tr><td class="logintext">Username:</td><td><input name="username" class="required username" id="username"></td></tr>
+			<tr><td class="logintext">Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
 
 			<tr><td></td><td><input type="submit" value="Submit"></td></tr>
-			<tr><td></td><td>New User? <a href="register.jsp">Register Here</a></td></tr>
+			<tr><td></td><td class="logintext">New User? <a href="register.jsp">Register Here</a></td></tr>
 			</form>
 		</div>
 		<div data-role="footer" data-position="fixed">

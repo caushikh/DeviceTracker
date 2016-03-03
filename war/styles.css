@@ -32,13 +32,17 @@ h1 {
 	color: white;
 	padding-top: 20px;
 }
-p {
+.homepara {
 	font-size: 18pt;
 	color: white;
 	font-weight: 600;
 	width: 75%;
 	margin: auto;
 	padding-top: 60px;
+	opacity: .75;
+}
+.logintext {
+	color:white;
 	opacity: .75;
 }
 #newacct td {
