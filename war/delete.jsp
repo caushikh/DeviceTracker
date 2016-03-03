@@ -45,7 +45,10 @@
 <%@ page import="org.json.simple.*" %>
 <%
 	PersistenceManager pm = PMF.getPMF().getPersistenceManager();
+	Transaction tx = pm.currentTransaction();
 	try {
+		tx.begin();
+		
 		Long userid;
 		String routename;
 		List<Locations> locations;
@@ -59,9 +62,14 @@
 			System.out.println("there is a location to delete");
 			Locations routeloc = locations.get(0);
 			pm.deletePersistent(routeloc);
+			tx.commit();
 		}
 	}
 	finally {
+		if (tx.isActive()) {
+			// Error occurred so rollback the transaction
+			tx.rollback();
+		}
 		pm.close();
 	}
 %>

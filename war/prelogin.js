@@ -251,13 +251,14 @@ $(document).on("pageinit", "#showmap", function() {
 
 $(document).on("pageinit", "#delete", function() {
 	var deleteName = "";
-	var getRoutes = function() {
+	var getRoutes = function(date) {
 		$.ajax({
 			method: "GET",
 			contentType: "application/json",
 			url: "getroutes.jsp",
 			data: {
-				"datatoget": "names"
+				"datatoget": "names",
+				"cb": date	
 			},	
 			dataType: "json",
 			success: function(routes) {
@@ -281,11 +282,11 @@ $(document).on("pageinit", "#delete", function() {
 			}
 		});
 	};
-	getRoutes();
+	getRoutes((new Date()).getTime());
 	$("#deletelink").click(function() {
 		deleteRoute(deleteName);
 		$("#deleteroutes").empty();
-		setTimeout(getRoutes, 1000);
+		setTimeout(function() {getRoutes((new Date()).getTime());}, 2000);
 	});
 });
 
