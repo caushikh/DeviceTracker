@@ -31,7 +31,10 @@
 
 			<tr><td></td><td><input type="submit" value="Submit"></td></tr>
 			<tr><td></td><td class="logintext">New User? <a href="register.jsp">Register Here</a></td></tr>
+			</table>
 			</form>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		</div>
 		<div data-role="footer" data-position="fixed">
 			<small>&copy;2016 Cartracker</small>
