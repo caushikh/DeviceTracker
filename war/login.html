@@ -30,7 +30,7 @@
 			<tr><td class="logintext">Password:</td><td><input name="password" type="password" class="required" id="password"></td></tr>
 
 			<tr><td></td><td><input type="submit" value="Submit"></td></tr>
-			<tr><td></td><td class="logintext">New User? <a href="register.jsp">Register Here</a></td></tr>
+			<tr><td></td><td class="logintext">New User? <a href="register.jsp" id="register">Register Here</a></td></tr>
 			</table>
 			</form>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

@@ -12,8 +12,8 @@ html, body, #track, #showmap{
 }
 .background {
 	background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-		url("../windshield_back.jpg");
-	background-size: cover;
+		url("windshield_back.jpg");
+	background-repeat: no-repeat;
 }
 #register {
 	color: #99ffff;
