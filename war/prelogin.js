@@ -285,8 +285,12 @@ $(document).on("pageinit", "#delete", function() {
 	getRoutes((new Date()).getTime());
 	$("#deletelink").click(function() {
 		deleteRoute(deleteName);
+		deleteRoute(deleteName);
 		$("#deleteroutes").empty();
-		setTimeout(function() {getRoutes((new Date()).getTime());}, 2000);
+		//window.location = "login.jsp?cb=" + (new Date()).getTime();
+		setTimeout(function() {getRoutes((new Date()).getTime());}, 500);
+		//window.location = "delete.jsp?cb=" + (new Date()).getTime();
+		
 	});
 });
 
